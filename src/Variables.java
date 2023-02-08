@@ -1,3 +1,5 @@
+import java.util.Locale;
+
 public class Variables {
     public static void main(String[] args) {
         task1();
@@ -30,9 +32,9 @@ public class Variables {
         float fl = 27.12f;
         long l = 987678965549L;
         double db = 1.786;
-        int n = 569;
+        char c = 569;
         short s = -159;
-        short number = 27897;
+        int number = 27897;
         byte years = 67;
     }
 
@@ -77,7 +79,7 @@ public class Variables {
         short iceCream = 2 * 100;
         short eggs = 4 * 70;
         int inGrams = bananas + milk + iceCream + eggs;
-        int inKillos = inGrams / 1000;
+        double inKillos = inGrams / 1000D;
         System.out.println("task6: ");
         System.out.println("Вес спортзавтрака равен " + inGrams + " гр., что составляет " + inKillos + " кг.");
         System.out.println();
@@ -88,10 +90,11 @@ public class Variables {
         byte goal = 7;
         int daysIfMin = (goal * 1000) / perDayMin;
         int daysIfMax = (goal * 1000) / perDayMax;
-        int daysApprox = (daysIfMin + daysIfMax) / 2;
+        double lossAverage = (perDayMax + perDayMin) / 2D;
+        double daysAverage = (goal * 1000) / lossAverage;
         System.out.println("task7: ");
         System.out.println(daysIfMin + " дней уйдет на похудение, если спортсмен будет терять каждый день по 250 грамм, но если - по 500 грамм в день, то он сможет сбросить 7 кг за " + daysIfMax + " дней.");
-        System.out.println("В среднем, чтобы добиться результата может потребоваться " + daysApprox + " дней.");
+        System.out.printf(Locale.US,"В среднем, количество дней для потери веса равно %.2f%n", daysAverage);
         System.out.println();
     }
 
